@@ -116,3 +116,130 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 301)
 
 
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (15.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (23.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20191008213912)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "surname" varchar, "name" varchar, "patronymic" varchar, "email" varchar, "region" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191008213912"]]
+  [1m[35m (18.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-10-08 21:44:34.363950"], ["updated_at", "2019-10-08 21:44:34.363950"]]
+  [1m[35m (15.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2019-10-09 01:44:54 +0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/mihail/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-6.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/mihail/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-6.0.0/lib/rails/templates/rails/welcome/index.html.erb (Duration: 10.1ms | Allocations: 198)
+Completed 200 OK in 23ms (Views: 10.9ms | ActiveRecord: 0.0ms | Allocations: 2296)
+
+
+Started GET "/users" for ::1 at 2019-10-09 01:47:35 +0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:18
+  Rendered users/index.html.erb within layouts/application (Duration: 10.1ms | Allocations: 1427)
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /home/mihail/project/cat/public/packs
+Completed 200 OK in 7739ms (Views: 7724.8ms | ActiveRecord: 2.1ms | Allocations: 1265798)
+
+
+Started GET "/users/new" for ::1 at 2019-10-09 01:47:48 +0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 37.7ms | Allocations: 5866)
+  Rendered users/new.html.erb within layouts/application (Duration: 39.2ms | Allocations: 6225)
+Completed 200 OK in 59ms (Views: 46.8ms | ActiveRecord: 1.1ms | Allocations: 16519)
+
+
+Started POST "/users" for ::1 at 2019-10-09 01:49:22 +0400
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"/HLvbeecs8ZtJe/HwsvKS2gvDcZAUk2c3tEbaYZP4Y74Zz0YepziRO61tRMkcFkvKr4NFcm5/whkplkpkuTcTg==", "user"=>{"surname"=>"BK", "name"=>"mihail", "patronymic"=>"Bulk", "email"=>"s@olympek.ru", "region"=>"samara"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:30:in `block in create'
+  [1m[36mUser Create (13.0ms)[0m  [1m[32mINSERT INTO "users" ("surname", "name", "patronymic", "email", "region", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["surname", "BK"], ["name", "mihail"], ["patronymic", "Bulk"], ["email", "s@olympek.ru"], ["region", "samara"], ["created_at", "2019-10-08 21:49:22.817434"], ["updated_at", "2019-10-08 21:49:22.817434"]]
+  ↳ app/controllers/users_controller.rb:30:in `block in create'
+  [1m[35m (24.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:30:in `block in create'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 45ms (ActiveRecord: 37.1ms | Allocations: 3830)
+
+
+Started GET "/users/1" for ::1 at 2019-10-09 01:49:22 +0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.4ms | Allocations: 354)
+Completed 200 OK in 13ms (Views: 7.6ms | ActiveRecord: 0.2ms | Allocations: 6708)
+
+
+Started GET "/users/1/edit" for ::1 at 2019-10-09 01:49:39 +0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `set_user'
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.8ms | Allocations: 1350)
+  Rendered users/edit.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1603)
+Completed 200 OK in 16ms (Views: 13.7ms | ActiveRecord: 0.2ms | Allocations: 7505)
+
+
+Started GET "/users/1" for ::1 at 2019-10-09 01:49:41 +0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 103)
+Completed 200 OK in 13ms (Views: 10.5ms | ActiveRecord: 0.4ms | Allocations: 5868)
+
+
+Started GET "/users" for ::1 at 2019-10-09 01:49:46 +0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:18
+  Rendered users/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 755)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.2ms | Allocations: 6021)
+
+
+Started GET "/users/1" for ::1 at 2019-10-09 01:50:15 +0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 101)
+Completed 200 OK in 13ms (Views: 10.0ms | ActiveRecord: 0.2ms | Allocations: 5862)
+
+
+Started GET "/users/1/edit" for ::1 at 2019-10-09 01:50:26 +0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `set_user'
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.6ms | Allocations: 1321)
+  Rendered users/edit.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1435)
+Completed 200 OK in 20ms (Views: 17.6ms | ActiveRecord: 0.2ms | Allocations: 7198)
+
+
+Started GET "/users/1" for ::1 at 2019-10-09 01:50:28 +0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 101)
+Completed 200 OK in 13ms (Views: 9.3ms | ActiveRecord: 0.2ms | Allocations: 5868)
+
+
