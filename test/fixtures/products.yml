@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  manufacturer: MyString
+  name: MyString
+  vendor_code: 1
+  weight: MyString
+  price: MyString
+  minimal_amount: MyString
+  title: MyString
+  h1: MyString
+  key_words: MyString
+  description: MyString
+
+two:
+  manufacturer: MyString
+  name: MyString
+  vendor_code: 1
+  weight: MyString
+  price: MyString
+  minimal_amount: MyString
+  title: MyString
+  h1: MyString
+  key_words: MyString
+  description: MyString

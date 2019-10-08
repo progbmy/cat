@@ -1,0 +1,67 @@
+<%= form_with(model: product, local: true) do |form| %>
+  <% if product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+        <% product.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :manufacturer %>
+    <%= form.text_field :manufacturer %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vendor_code %>
+    <%= form.number_field :vendor_code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :weight %>
+    <%= form.text_field :weight %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_field :price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :minimal_amount %>
+    <%= form.text_field :minimal_amount %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :h1 %>
+    <%= form.text_field :h1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :key_words %>
+    <%= form.text_field :key_words %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
